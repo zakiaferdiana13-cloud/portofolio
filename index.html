@@ -18,7 +18,7 @@
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Source+Sans+3:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -30,226 +30,102 @@
     }
 
     .font-heading {
-      font-family: 'Outfit', -apple-system, sans-serif;
+      font-family: 'Playfair Display', Georgia, serif;
     }
 
     .font-body {
-      font-family: 'Manrope', -apple-system, sans-serif;
+      font-family: 'Source Sans 3', system-ui, sans-serif;
     }
 
-    .gradient-mint {
-      background: linear-gradient(135deg, #10b981 0%, #14b8a6 50%, #06b6d4 100%);
-    }
-
-    .text-gradient-mint {
-      background: linear-gradient(135deg, #10b981 0%, #14b8a6 50%, #06b6d4 100%);
+    .gradient-text {
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
-    .card-minimal {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    .hero-gradient {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 25%, #e0f2fe 50%, #f0f9ff 100%);
     }
 
-    .card-minimal:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(16, 185, 129, 0.12);
-      border-color: #10b981;
+    .card-gradient {
+      background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
     }
 
-    .btn-mint {
-      background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
-      color: white;
+    .btn-gradient {
+      background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
       transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
     }
 
-    .btn-mint::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transition: left 0.5s ease;
-    }
-
-    .btn-mint:hover::before {
-      left: 100%;
-    }
-
-    .btn-mint:hover {
+    .btn-gradient:hover {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #2563eb 100%);
       transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(16, 185, 129, 0.3);
+      box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
     }
 
-    .btn-outline-mint {
-      border: 2px solid #10b981;
-      color: #10b981;
-      background: transparent;
-      transition: all 0.3s ease;
-    }
-
-    .btn-outline-mint:hover {
-      background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(16, 185, 129, 0.2);
-    }
-
-    .section-heading {
-      position: relative;
-      display: inline-block;
-      padding-bottom: 16px;
-    }
-
-    .section-heading::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, #10b981, #14b8a6);
-      border-radius: 2px;
-    }
-
-    .skill-pill {
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      color: #16a34a;
-      transition: all 0.3s ease;
-    }
-
-    .skill-pill:hover {
-      background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
-      color: white;
-      border-color: transparent;
-      transform: scale(1.05);
-    }
-
-    .timeline-dot {
-      position: relative;
-      padding-left: 28px;
-      border-left: 2px solid #d1fae5;
-    }
-
-    .timeline-dot::before {
-      content: '';
-      position: absolute;
-      left: -9px;
-      top: 0;
-      width: 16px;
-      height: 16px;
-      background: linear-gradient(135deg, #10b981, #14b8a6);
-      border-radius: 50%;
-      border: 3px solid white;
-      box-shadow: 0 0 0 4px #f0fdf4;
-    }
-
-    .nav-item {
+    .nav-link {
       position: relative;
       transition: color 0.3s ease;
     }
 
-    .nav-item::after {
+    .nav-link::after {
       content: '';
       position: absolute;
-      bottom: -6px;
+      bottom: -4px;
       left: 0;
       width: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #10b981, #14b8a6);
+      height: 2px;
+      background: linear-gradient(90deg, #2563eb, #06b6d4);
       transition: width 0.3s ease;
-      border-radius: 2px;
     }
 
-    .nav-item:hover::after,
-    .nav-item.active::after {
+    .nav-link:hover::after {
       width: 100%;
     }
 
-    .profile-card {
-      background: white;
-      border-radius: 24px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-      border: 1px solid #f3f4f6;
-    }
-
-    .profile-image-wrapper {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      padding: 6px;
-      background: linear-gradient(135deg, #10b981, #14b8a6, #06b6d4);
-    }
-
-    .stat-card {
-      background: linear-gradient(135deg, #ecfdf5 0%, #f0fdfa 100%);
-      border: 1px solid #a7f3d0;
-      border-radius: 12px;
-      padding: 16px;
-      text-align: center;
+    .skill-card {
       transition: all 0.3s ease;
     }
 
-    .stat-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15);
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.2);
     }
 
-    .contact-info-card {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 20px;
+    .experience-card {
       transition: all 0.3s ease;
+      border-left: 4px solid transparent;
     }
 
-    .contact-info-card:hover {
-      border-color: #10b981;
-      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.1);
-      transform: translateX(8px);
+    .experience-card:hover {
+      border-left-color: #2563eb;
+      background: linear-gradient(90deg, #eff6ff 0%, transparent 100%);
     }
 
-    .org-badge {
-      background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
-      border-left: 4px solid #10b981;
-      border-radius: 12px;
+    .floating {
+      animation: floating 3s ease-in-out infinite;
     }
 
-    input:focus,
-    textarea:focus {
-      outline: none;
-      border-color: #10b981;
-      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    @keyframes floating {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
-    .mobile-menu-overlay {
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
     }
 
-    .mobile-menu-overlay.active {
-      transform: translateX(0);
-    }
-
-    .fade-up {
-      animation: fadeUp 0.8s ease-out forwards;
-      opacity: 0;
-    }
-
-    @keyframes fadeUp {
+    @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
       }
 
       to {
@@ -258,30 +134,49 @@
       }
     }
 
-    .float-animation {
-      animation: float 6s ease-in-out infinite;
+    .section-divider {
+      background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+      height: 1px;
     }
 
-    @keyframes float {
+    .profile-ring {
+      background: linear-gradient(135deg, #1e40af, #3b82f6, #06b6d4, #1e40af);
+      background-size: 300% 300%;
+      animation: gradient-rotate 4s ease infinite;
+    }
 
-      0%,
-      100% {
-        transform: translateY(0px);
+    @keyframes gradient-rotate {
+      0% {
+        background-position: 0% 50%;
       }
 
       50% {
-        transform: translateY(-20px);
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
       }
     }
 
-    .icon-wrapper {
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+    .glass-effect {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .org-card {
+      transition: all 0.3s ease;
+    }
+
+    .org-card:hover {
+      transform: scale(1.02);
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
     }
   </style>
 
@@ -295,214 +190,92 @@
 
 </head>
 
-<body class="h-full font-body text-gray-800 overflow-auto bg-gray-50">
+<body class="h-full font-body bg-white text-slate-700">
 
   <div id="app-wrapper" class="w-full h-full overflow-auto">
-    <!-- Navigation Header -->
+    <!-- Header/Navigation -->
 
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 glass-effect shadow-sm">
 
-      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="flex justify-between items-center py-4">
+        <div class="flex items-center justify-between h-16 sm:h-20">
 
-          <div>
-
-            <h1 id="site-name" class="font-heading font-bold text-2xl text-gradient-mint">Zakia Ferdiana</h1>
+          <div class="flex flex-col"><span id="header-name" class="font-heading text-lg sm:text-xl font-bold gradient-text">Zakia Ferdiana</span> <span id="header-tagline" class="text-xs sm:text-sm text-slate-500 hidden sm:block">Dedikasi untuk Kesehatan, Inovasi untuk masa depan</span>
 
           </div><!-- Desktop Navigation -->
 
-          <nav class="hidden md:flex items-center space-x-8"><a href="#home" class="nav-item text-gray-600 hover:text-emerald-600 font-medium text-sm">Home</a> <a href="#about" class="nav-item text-gray-600 hover:text-emerald-600 font-medium text-sm">About</a> <a href="#skills" class="nav-item text-gray-600 hover:text-emerald-600 font-medium text-sm">Skills</a> <a href="#experience" class="nav-item text-gray-600 hover:text-emerald-600 font-medium text-sm">Experience</a> <a href="#contact" class="btn-mint px-6 py-2 rounded-full font-medium text-sm">Contact</a>
+          <nav class="hidden md:flex items-center space-x-8"><a href="#home" class="nav-link text-slate-600 hover:text-blue-600 font-medium">Home</a> <a href="#about" class="nav-link text-slate-600 hover:text-blue-600 font-medium">About</a> <a href="#skills" class="nav-link text-slate-600 hover:text-blue-600 font-medium">Skills</a> <a href="#experience" class="nav-link text-slate-600 hover:text-blue-600 font-medium">Experience</a> <a href="#contact" class="nav-link text-slate-600 hover:text-blue-600 font-medium">Contact</a>
 
-          </nav><!-- Mobile Menu Button --> <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
+          </nav><!-- Mobile Menu Button --> <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-blue-50 transition-colors">
 
-            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
 
             </svg></button>
 
-        </div>
+        </div><!-- Mobile Navigation -->
 
-      </div><!-- Mobile Menu -->
+        <nav id="mobile-menu" class="md:hidden hidden pb-4">
 
-      <div id="mobile-menu" class="mobile-menu-overlay fixed top-0 right-0 h-full w-72 bg-white shadow-2xl md:hidden z-50">
+          <div class="flex flex-col space-y-3"><a href="#home" class="text-slate-600 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-blue-50 transition-colors">Home</a> <a href="#about" class="text-slate-600 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-blue-50 transition-colors">About</a> <a href="#skills" class="text-slate-600 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-blue-50 transition-colors">Skills</a> <a href="#experience" class="text-slate-600 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-blue-50 transition-colors">Experience</a> <a href="#contact" class="text-slate-600 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-blue-50 transition-colors">Contact</a>
 
-        <div class="p-6"><button id="close-menu-btn" class="absolute top-6 right-6 p-2 rounded-lg hover:bg-gray-100">
+          </div>
 
-            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-
-            </svg></button>
-
-          <nav class="mt-16 flex flex-col space-y-6"><a href="#home" class="mobile-nav-link text-lg text-gray-700 hover:text-emerald-600 font-medium">Home</a> <a href="#about" class="mobile-nav-link text-lg text-gray-700 hover:text-emerald-600 font-medium">About</a> <a href="#skills" class="mobile-nav-link text-lg text-gray-700 hover:text-emerald-600 font-medium">Skills</a> <a href="#experience" class="mobile-nav-link text-lg text-gray-700 hover:text-emerald-600 font-medium">Experience</a> <a href="#contact" class="mobile-nav-link text-lg text-gray-700 hover:text-emerald-600 font-medium">Contact</a>
-
-          </nav>
-
-        </div>
+        </nav>
 
       </div>
 
-    </header><!-- Hero Section -->
+    </header><!-- Hero Section / Home -->
 
-    <section id="home" class="min-h-screen flex items-center pt-20 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20">
 
-      <div class="max-w-6xl mx-auto px-6 lg:px-8 py-20 w-full">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
 
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <!-- Profile Card -->
+        <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <!-- Text Content -->
 
-          <div class="profile-card p-8 fade-up">
+          <div class="order-2 md:order-1 text-center md:text-left fade-in">
 
-            <div class="flex flex-col items-center">
+            <p class="text-blue-600 font-medium mb-2 tracking-wider uppercase text-sm">Selamat Datang</p>
 
-              <div class="profile-image-wrapper mb-6 float-animation"><img src="https://freeimage.host/i/ft6BWua" alt="Zakia Ferdiana" loading="lazy" class="w-full h-full rounded-full object-cover bg-white" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #10b981, #14b8a6)'; this.alt='Foto Profil'; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2238%22 r=%2216%22 fill=%22%23ffffff%22/%3E%3Cellipse cx=%2250%22 cy=%2273%22 rx=%2226%22 ry=%2221%22 fill=%22%23ffffff%22/%3E%3C/svg%3E';">
+            <h1 id="hero-name" class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 mb-4">Zakia Ferdiana</h1>
 
-              </div>
+            <p id="hero-role" class="text-xl sm:text-2xl gradient-text font-semibold mb-6">Apoteker &amp; Formulator Kosmetik</p>
 
-              <h1 id="hero-title" class="font-heading text-3xl font-bold text-gray-900 mb-2 text-center">Zakia Ferdiana</h1>
+            <p id="hero-intro" class="text-slate-600 text-lg leading-relaxed mb-8 max-w-lg mx-auto md:mx-0">Seorang lulusan Farmasi Universitas Padjadjaran yang berfokus pada integrasi layanan kesehatan klinis dan pengembangan produk inovatif.</p>
 
-              <p id="hero-role" class="text-lg text-gradient-mint font-semibold mb-4 text-center">Apoteker &amp; Formulator Kosmetik</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"><a href="#experience" class="btn-gradient text-white px-8 py-4 rounded-full font-semibold shadow-lg inline-flex items-center justify-center gap-2">
 
-              <p id="tagline" class="text-gray-600 text-center mb-6 leading-relaxed">Lulusan Cum Laude Farmasi Unpad yang berfokus pada integrasi layanan kesehatan klinis dan pengembangan produk inovatif.</p><!-- Stats -->
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
 
-              <div class="grid grid-cols-3 gap-4 w-full mb-6">
+                </svg> Lihat Portofolio </a> <a href="#contact" class="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-2">
 
-                <div class="stat-card">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 
-                  <div class="text-2xl font-bold text-emerald-600 font-heading">
-
-                    3.8
-
-                  </div>
-
-                  <div class="text-xs text-gray-600 mt-1">
-
-                    IPK
-
-                  </div>
-
-                </div>
-
-                <div class="stat-card">
-
-                  <div class="text-2xl font-bold text-emerald-600 font-heading">
-
-                    5+
-
-                  </div>
-
-                  <div class="text-xs text-gray-600 mt-1">
-
-                    Experience
-
-                  </div>
-
-                </div>
-
-                <div class="stat-card">
-
-                  <div class="text-2xl font-bold text-emerald-600 font-heading">
-
-                    10+
-
-                  </div>
-
-                  <div class="text-xs text-gray-600 mt-1">
-
-                    Projects
-
-                  </div>
-
-                </div>
-
-              </div><!-- CTA Buttons -->
-
-              <div class="flex gap-4 w-full"><a href="#contact" class="btn-mint flex-1 px-6 py-3 rounded-xl font-semibold text-center"> Contact Me </a> <a href="#about" class="btn-outline-mint flex-1 px-6 py-3 rounded-xl font-semibold text-center"> Learn More </a>
-
-              </div>
+                </svg> Hubungi Saya </a>
 
             </div>
 
-          </div><!-- Hero Content -->
+          </div><!-- Profile Image -->
 
-          <div class="fade-up" style="animation-delay: 0.2s;">
+          <div class="order-1 md:order-2 flex justify-center fade-in">
 
-            <div class="space-y-6">
+            <div class="relative">
 
-              <div class="card-minimal p-6">
+              <div class="profile-ring p-1.5 rounded-full floating">
 
-                <div class="flex items-start gap-4">
-
-                  <div class="icon-wrapper flex-shrink-0">
-
-                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-
-                    </svg>
-
-                  </div>
-
-                  <div>
-
-                    <h3 class="font-heading text-lg font-bold text-gray-900 mb-2">Inovasi &amp; Riset</h3>
-
-                    <p class="text-gray-600 text-sm leading-relaxed">Berfokus pada riset farmakoterapi dan formulasi kosmetik berbasis sains untuk menciptakan solusi kesehatan yang inovatif dan efektif.</p>
-
-                  </div>
+                <div class="bg-white p-1 rounded-full"><img src="https://iili.io/ftDlTmP.md.jpg" alt="Foto Zakia Ferdiana" loading="lazy" class="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)'; this.alt='ZF'; this.classList.add('flex', 'items-center', 'justify-center'); this.outerHTML='<div class=\'w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-blue-800 to-blue-500 flex items-center justify-center\'><span class=\'text-6xl sm:text-7xl lg:text-8xl font-heading font-bold text-white\'>ZF</span></div>';">
 
                 </div>
 
-              </div>
+              </div><!-- Decorative Elements -->
 
-              <div class="card-minimal p-6">
+              <div class="absolute -top-4 -right-4 w-20 h-20 bg-cyan-400/20 rounded-full blur-xl"></div>
 
-                <div class="flex items-start gap-4">
-
-                  <div class="icon-wrapper flex-shrink-0">
-
-                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-
-                    </svg>
-
-                  </div>
-
-                  <div>
-
-                    <h3 class="font-heading text-lg font-bold text-gray-900 mb-2">Prestasi Akademik</h3>
-
-                    <p class="text-gray-600 text-sm leading-relaxed">Lulusan terbaik Farmasi Universitas Padjadjaran dengan predikat Cum Laude dan IPK 3.8, membuktikan dedikasi dalam bidang farmasi.</p>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-              <div class="card-minimal p-6">
-
-                <div class="flex items-start gap-4">
-
-                  <div class="icon-wrapper flex-shrink-0">
-
-                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-
-                    </svg>
-
-                  </div>
-
-                  <div>
-
-                    <h3 class="font-heading text-lg font-bold text-gray-900 mb-2">Pengalaman Profesional</h3>
-
-                    <p class="text-gray-600 text-sm leading-relaxed">Pengalaman di Paragon, From This Island, BPOM, dan RS Tipe A memberikan pemahaman komprehensif tentang industri farmasi dan kosmetik.</p>
-
-                  </div>
-
-                </div>
-
-              </div>
+              <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-blue-400/20 rounded-full blur-xl"></div>
 
             </div>
 
@@ -514,23 +287,24 @@
 
     </section><!-- About Section -->
 
-    <section id="about" class="bg-white py-24">
+    <section id="about" class="py-16 sm:py-24 bg-white">
 
-      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="text-center mb-16">
+        <div class="text-center mb-12 sm:mb-16">
 
-          <h2 id="about-title" class="font-heading text-4xl font-bold text-gray-900 section-heading inline-block">About Me</h2>
+          <p class="text-blue-600 font-medium mb-2 tracking-wider uppercase text-sm">Mengenal Lebih Dekat</p>
 
-          <p class="text-gray-600 mt-6 max-w-2xl mx-auto">Dedikasi untuk Kesehatan, Inovasi untuk masa depan.</p>
+          <h2 id="about-title" class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800">Tentang Saya</h2>
 
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+          <!-- Background Card -->
 
-          <div class="card-minimal p-8">
+          <div class="card-gradient rounded-2xl p-6 sm:p-8 shadow-lg border border-slate-100 skill-card">
 
-            <div class="icon-wrapper mb-6">
+            <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
 
               <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -539,43 +313,43 @@
 
             </div>
 
-            <h3 class="font-heading text-xl font-bold text-gray-900 mb-4">Latar Belakang</h3>
+            <h3 class="font-heading text-xl font-bold text-slate-800 mb-4">Latar Belakang</h3>
 
-            <p class="text-gray-600 leading-relaxed text-sm">Lulusan terbaik (Cum Laude) Farmasi Unpad dengan IPK 3,8. Perjalanan akademik saya membentuk pondasi kuat dalam memahami sains farmasi yang presisi.</p>
+            <p class="text-slate-600 leading-relaxed">Saya merupakan lulusan terbaik <span class="font-semibold text-blue-600">(Cum Laude)</span> Farmasi Unpad dengan IPK <span class="font-semibold text-blue-600">3,8</span>. Perjalanan akademik saya membentuk pondasi kuat dalam memahami sains farmasi yang presisi.</p>
 
-          </div>
+          </div><!-- Goals Card -->
 
-          <div class="card-minimal p-8">
+          <div class="card-gradient rounded-2xl p-6 sm:p-8 shadow-lg border border-slate-100 skill-card">
 
-            <div class="icon-wrapper mb-6">
+            <div class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
 
               <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
 
               </svg>
 
             </div>
 
-            <h3 class="font-heading text-xl font-bold text-gray-900 mb-4">Minat &amp; Tujuan</h3>
+            <h3 class="font-heading text-xl font-bold text-slate-800 mb-4">Minat &amp; Tujuan</h3>
 
-            <p class="text-gray-600 leading-relaxed text-sm">Memiliki minat besar dalam riset obat-obatan (farmakoterapi) dan rekayasa formulasi kosmetik. Tujuan saya adalah menciptakan solusi kesehatan yang aman dan efektif.</p>
+            <p class="text-slate-600 leading-relaxed">Memiliki minat besar dalam riset obat-obatan <span class="font-semibold text-cyan-600">(farmakoterapi)</span> dan rekayasa formulasi kosmetik. Tujuan saya adalah menciptakan solusi kesehatan yang aman dan produk kecantikan berbasis sains yang efektif.</p>
 
-          </div>
+          </div><!-- Values Card -->
 
-          <div class="card-minimal p-8">
+          <div class="card-gradient rounded-2xl p-6 sm:p-8 shadow-lg border border-slate-100 skill-card">
 
-            <div class="icon-wrapper mb-6">
+            <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
 
               <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
 
               </svg>
 
             </div>
 
-            <h3 class="font-heading text-xl font-bold text-gray-900 mb-4">Nilai &amp; Keunggulan</h3>
+            <h3 class="font-heading text-xl font-bold text-slate-800 mb-4">Nilai &amp; Keunggulan</h3>
 
-            <p class="text-gray-600 leading-relaxed text-sm">Menggabungkan ketelitian seorang klinisi dengan kreativitas seorang formulator. Pribadi yang analitis dan adaptif terhadap regulasi industri yang dinamis.</p>
+            <p class="text-slate-600 leading-relaxed">Menggabungkan ketelitian seorang <span class="font-semibold text-indigo-600">klinisi</span> dengan kreativitas seorang <span class="font-semibold text-indigo-600">formulator</span>. Saya adalah pribadi yang analitis, adaptif terhadap regulasi industri yang dinamis.</p>
 
           </div>
 
@@ -585,60 +359,182 @@
 
     </section><!-- Skills Section -->
 
-    <section id="skills" class="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 py-24">
+    <section id="skills" class="py-16 sm:py-24 bg-gradient-to-b from-slate-50 to-white">
 
-      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="text-center mb-16">
+        <div class="text-center mb-12 sm:mb-16">
 
-          <h2 class="font-heading text-4xl font-bold text-gray-900 section-heading inline-block">Skills &amp; Expertise</h2>
+          <p class="text-blue-600 font-medium mb-2 tracking-wider uppercase text-sm">Kompetensi</p>
+
+          <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800">Skills &amp; Keahlian</h2>
 
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid lg:grid-cols-2 gap-8">
           <!-- Hard Skills -->
 
-          <div class="card-minimal p-8">
+          <div class="card-gradient rounded-2xl p-6 sm:p-8 shadow-lg border border-slate-100">
 
             <div class="flex items-center gap-4 mb-6">
 
-              <div class="icon-wrapper">
+              <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
 
-                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
 
                 </svg>
 
               </div>
 
-              <h3 class="font-heading text-2xl font-bold text-gray-900">Hard Skills</h3>
+              <h3 class="font-heading text-2xl font-bold text-slate-800">Hard Skills</h3>
 
             </div>
 
-            <div class="flex flex-wrap gap-3"><span class="skill-pill px-4 py-2 rounded-full text-sm font-medium">Formulasi Sediaan Farmasi &amp; Kosmetik</span> <span class="skill-pill px-4 py-2 rounded-full text-sm font-medium">Analisis Instrumen (HPLC, Spektrofotometri)</span> <span class="skill-pill px-4 py-2 rounded-full text-sm font-medium">Regulasi BPOM &amp; Sertifikasi Halal</span> <span class="skill-pill px-4 py-2 rounded-full text-sm font-medium">Farmakologi Klinik</span> <span class="skill-pill px-4 py-2 rounded-full text-sm font-medium">Manajemen Inventaris Obat</span>
+            <div class="space-y-4">
+
+              <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"><span class="text-blue-500 mt-1">💊</span>
+
+                <div>
+
+                  <p class="font-semibold text-slate-800">Formulasi Sediaan</p>
+
+                  <p class="text-sm text-slate-500">Farmasi &amp; Kosmetik</p>
+
+                </div>
+
+              </div>
+
+              <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"><span class="text-blue-500 mt-1">🔬</span>
+
+                <div>
+
+                  <p class="font-semibold text-slate-800">Analisis Instrumen</p>
+
+                  <p class="text-sm text-slate-500">HPLC, Spektrofotometri</p>
+
+                </div>
+
+              </div>
+
+              <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"><span class="text-blue-500 mt-1">📋</span>
+
+                <div>
+
+                  <p class="font-semibold text-slate-800">Regulasi</p>
+
+                  <p class="text-sm text-slate-500">BPOM &amp; Sertifikasi Halal</p>
+
+                </div>
+
+              </div>
+
+              <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"><span class="text-blue-500 mt-1">🏥</span>
+
+                <div>
+
+                  <p class="font-semibold text-slate-800">Farmakologi Klinik</p>
+
+                  <p class="text-sm text-slate-500">Manajemen Terapi Obat</p>
+
+                </div>
+
+              </div>
+
+              <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"><span class="text-blue-500 mt-1">📦</span>
+
+                <div>
+
+                  <p class="font-semibold text-slate-800">Manajemen Inventaris</p>
+
+                  <p class="text-sm text-slate-500">Pengelolaan Stok Obat</p>
+
+                </div>
+
+              </div>
 
             </div>
 
           </div><!-- Soft Skills -->
 
-          <div class="card-minimal p-8">
+          <div class="card-gradient rounded-2xl p-6 sm:p-8 shadow-lg border border-slate-100">
 
             <div class="flex items-center gap-4 mb-6">
 
-              <div class="icon-wrapper">
+              <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg">
 
-                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
 
                 </svg>
 
               </div>
 
-              <h3 class="font-heading text-2xl font-bold text-gray-900">Soft Skills</h3>
+              <h3 class="font-heading text-2xl font-bold text-slate-800">Soft Skills</h3>
 
             </div>
 
-            <div class="flex flex-wrap gap-3"><span class="skill-pill px-4 py-2 rounded-full text-sm font-medium">Problem Solving yang Kritis</span> <span class="skill-pill px-4 py-2 rounded-full text-sm font-medium">Komunikasi Interpersonal</span> <span class="skill-pill px-4 py-2 rounded-full text-sm font-medium">Manajemen Waktu</span> <span class="skill-pill px-4 py-2 rounded-full text-sm font-medium">Kepemimpinan Tim</span> <span class="skill-pill px-4 py-2 rounded-full text-sm font-medium">Ketahanan Kerja</span>
+            <div class="space-y-4">
+
+              <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-cyan-50 transition-colors"><span class="text-cyan-500 mt-1">🧠</span>
+
+                <div>
+
+                  <p class="font-semibold text-slate-800">Problem Solving</p>
+
+                  <p class="text-sm text-slate-500">Pemikiran Kritis &amp; Analitis</p>
+
+                </div>
+
+              </div>
+
+              <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-cyan-50 transition-colors"><span class="text-cyan-500 mt-1">💬</span>
+
+                <div>
+
+                  <p class="font-semibold text-slate-800">Komunikasi Interpersonal</p>
+
+                  <p class="text-sm text-slate-500">Kolaborasi Tim Efektif</p>
+
+                </div>
+
+              </div>
+
+              <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-cyan-50 transition-colors"><span class="text-cyan-500 mt-1">⏰</span>
+
+                <div>
+
+                  <p class="font-semibold text-slate-800">Manajemen Waktu</p>
+
+                  <p class="text-sm text-slate-500">Prioritas &amp; Deadline</p>
+
+                </div>
+
+              </div>
+
+              <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-cyan-50 transition-colors"><span class="text-cyan-500 mt-1">👥</span>
+
+                <div>
+
+                  <p class="font-semibold text-slate-800">Kepemimpinan Tim</p>
+
+                  <p class="text-sm text-slate-500">Koordinasi &amp; Motivasi</p>
+
+                </div>
+
+              </div>
+
+              <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-cyan-50 transition-colors"><span class="text-cyan-500 mt-1">💪</span>
+
+                <div>
+
+                  <p class="font-semibold text-slate-800">Ketahanan Kerja</p>
+
+                  <p class="text-sm text-slate-500">Endurance &amp; Resiliensi</p>
+
+                </div>
+
+              </div>
 
             </div>
 
@@ -650,51 +546,77 @@
 
     </section><!-- Experience Section -->
 
-    <section id="experience" class="bg-white py-24">
+    <section id="experience" class="py-16 sm:py-24 bg-white">
 
-      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="text-center mb-16">
+        <div class="text-center mb-12 sm:mb-16">
 
-          <h2 class="font-heading text-4xl font-bold text-gray-900 section-heading inline-block">Experience</h2>
+          <p class="text-blue-600 font-medium mb-2 tracking-wider uppercase text-sm">Perjalanan Profesional</p>
+
+          <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800">Pengalaman</h2>
 
         </div>
 
-        <div class="grid md:grid-cols-2 gap-12">
+        <div class="grid lg:grid-cols-2 gap-8 mb-12">
           <!-- Clinical & Regulatory -->
 
-          <div>
+          <div class="space-y-6">
 
-            <div class="flex items-center gap-4 mb-8">
+            <div class="flex items-center gap-3 mb-4">
 
-              <div class="icon-wrapper">
+              <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
 
-                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
 
                 </svg>
 
               </div>
 
-              <h3 class="font-heading text-2xl font-bold text-gray-900">Klinis &amp; Regulasi</h3>
+              <h3 class="font-heading text-xl font-bold text-slate-800">Klinis &amp; Regulasi</h3>
 
             </div>
 
-            <div class="space-y-6">
+            <div class="experience-card bg-slate-50 rounded-xl p-5 cursor-pointer">
 
-              <div class="timeline-dot pb-6">
+              <div class="flex items-start gap-4">
 
-                <h4 class="font-semibold text-gray-900 mb-2">Praktik Rumah Sakit Tipe A</h4>
+                <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm flex-shrink-0"><span class="text-2xl">🏥</span>
 
-                <p class="text-gray-600 text-sm leading-relaxed">Berpengalaman praktik di Rumah Sakit Tipe A (Pusat) dalam manajemen terapi obat pasien, pemantauan efek samping, dan kolaborasi dengan tim medis multidisiplin.</p>
+                </div>
+
+                <div>
+
+                  <h4 class="font-semibold text-slate-800 mb-1">Rumah Sakit Tipe A (Pusat)</h4>
+
+                  <p class="text-blue-600 text-sm font-medium mb-2">Praktik Klinis</p>
+
+                  <p class="text-slate-600 text-sm">Berpengalaman dalam manajemen terapi obat dan pelayanan farmasi klinis di rumah sakit rujukan nasional.</p>
+
+                </div>
 
               </div>
 
-              <div class="timeline-dot">
+            </div>
 
-                <h4 class="font-semibold text-gray-900 mb-2">Magang di BPOM</h4>
+            <div class="experience-card bg-slate-50 rounded-xl p-5 cursor-pointer">
 
-                <p class="text-gray-600 text-sm leading-relaxed">Pengalaman magang di Badan Pengawas Obat dan Makanan untuk pengawasan mutu dan regulasi produk farmasi serta kosmetik.</p>
+              <div class="flex items-start gap-4">
+
+                <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm flex-shrink-0"><span class="text-2xl">📋</span>
+
+                </div>
+
+                <div>
+
+                  <h4 class="font-semibold text-slate-800 mb-1">BPOM (Badan POM)</h4>
+
+                  <p class="text-blue-600 text-sm font-medium mb-2">Magang Regulasi</p>
+
+                  <p class="text-slate-600 text-sm">Pengawasan mutu dan regulasi produk obat, makanan, dan kosmetik untuk memastikan keamanan masyarakat.</p>
+
+                </div>
 
               </div>
 
@@ -702,46 +624,62 @@
 
           </div><!-- Research & Industry -->
 
-          <div>
+          <div class="space-y-6">
 
-            <div class="flex items-center gap-4 mb-8">
+            <div class="flex items-center gap-3 mb-4">
 
-              <div class="icon-wrapper">
+              <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center">
 
-                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 
                 </svg>
 
               </div>
 
-              <h3 class="font-heading text-2xl font-bold text-gray-900">Riset &amp; Industri</h3>
+              <h3 class="font-heading text-xl font-bold text-slate-800">Riset &amp; Industri</h3>
 
             </div>
 
-            <div class="space-y-6">
+            <div class="experience-card bg-slate-50 rounded-xl p-5 cursor-pointer">
 
-              <div class="timeline-dot pb-6">
+              <div class="flex items-start gap-4">
 
-                <h4 class="font-semibold text-gray-900 mb-2">Paragon Technology and Innovation</h4>
+                <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm flex-shrink-0"><span class="text-2xl">✨</span>
 
-                <p class="text-gray-600 text-sm leading-relaxed">Magang di perusahaan kosmetik ternama Indonesia, berfokus pada riset dan pengembangan formulasi produk kecantikan inovatif.</p>
+                </div>
+
+                <div>
+
+                  <h4 class="font-semibold text-slate-800 mb-1">Paragon Technology and Innovation</h4>
+
+                  <p class="text-cyan-600 text-sm font-medium mb-2">Magang Industri Kosmetik</p>
+
+                  <p class="text-slate-600 text-sm">Pengembangan produk kecantikan berbasis riset dengan standar industri internasional.</p>
+
+                </div>
 
               </div>
 
-              <div class="timeline-dot pb-6">
+            </div>
 
-                <h4 class="font-semibold text-gray-900 mb-2">From This Island (by Maudy Ayunda)</h4>
+            <div class="experience-card bg-slate-50 rounded-xl p-5 cursor-pointer">
 
-                <p class="text-gray-600 text-sm leading-relaxed">Terlibat dalam pengembangan produk kecantikan berbasis bahan alami Indonesia, menggabungkan kearifan lokal dengan standar formulasi modern.</p>
+              <div class="flex items-start gap-4">
 
-              </div>
+                <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm flex-shrink-0"><span class="text-2xl">🌿</span>
 
-              <div class="timeline-dot">
+                </div>
 
-                <h4 class="font-semibold text-gray-900 mb-2">Riset Pengembangan Obat</h4>
+                <div>
 
-                <p class="text-gray-600 text-sm leading-relaxed">Terlibat aktif dalam proyek riset pengembangan obat selama masa studi, meningkatkan pemahaman mendalam tentang proses R&amp;D farmasi.</p>
+                  <h4 class="font-semibold text-slate-800 mb-1">From This Island (by Maudy Ayunda)</h4>
+
+                  <p class="text-cyan-600 text-sm font-medium mb-2">Pengembangan Produk</p>
+
+                  <p class="text-slate-600 text-sm">Fokus pada pengembangan produk kecantikan berbasis bahan alami Indonesia yang berkelanjutan.</p>
+
+                </div>
 
               </div>
 
@@ -751,53 +689,59 @@
 
         </div><!-- Organization Experience -->
 
-        <div class="mt-20">
+        <div class="mt-16">
 
-          <h3 class="font-heading text-3xl font-bold text-gray-900 text-center mb-12">Pengalaman Organisasi</h3>
+          <div class="text-center mb-10">
 
-          <div class="grid md:grid-cols-2 gap-8">
+            <p class="text-blue-600 font-medium mb-2 tracking-wider uppercase text-sm">Kontribusi Sosial</p>
 
-            <div class="org-badge p-6 card-minimal">
+            <h3 class="font-heading text-2xl sm:text-3xl font-bold text-slate-800">Pengalaman Organisasi</h3>
 
-              <div class="flex items-start gap-4">
+          </div>
 
-                <div class="w-12 h-12 rounded-lg gradient-mint flex items-center justify-center flex-shrink-0"><span class="text-2xl text-white">♠</span>
+          <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="org-card bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
+
+              <div class="flex items-center gap-4 mb-4">
+
+                <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg"><span class="text-2xl">♠️</span>
 
                 </div>
 
                 <div>
 
-                  <h4 class="font-heading text-lg font-bold text-gray-900 mb-1">ISMAFARSI</h4>
+                  <h4 class="font-heading font-bold text-slate-800">ISMAFARSI</h4>
 
-                  <p class="text-xs text-emerald-600 font-medium mb-3">Ikatan Senat Mahasiswa Farmasi Seluruh Indonesia</p>
-
-                  <p class="text-gray-600 text-sm leading-relaxed">Aktif dalam advokasi isu kesehatan nasional dan kebijakan profesi apoteker di tingkat mahasiswa.</p>
+                  <p class="text-sm text-blue-600">Ikatan Senat Mahasiswa Farmasi Seluruh Indonesia</p>
 
                 </div>
 
               </div>
+
+              <p class="text-slate-600 leading-relaxed">Aktif dalam advokasi isu kesehatan nasional dan kebijakan profesi apoteker di tingkat mahasiswa, membangun jaringan profesional lintas universitas.</p>
 
             </div>
 
-            <div class="org-badge p-6 card-minimal">
+            <div class="org-card bg-gradient-to-br from-cyan-50 to-teal-50 rounded-2xl p-6 border border-cyan-100">
 
-              <div class="flex items-start gap-4">
+              <div class="flex items-center gap-4 mb-4">
 
-                <div class="w-12 h-12 rounded-lg gradient-mint flex items-center justify-center flex-shrink-0"><span class="text-2xl text-white">♠</span>
+                <div class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg"><span class="text-2xl">🤝</span>
 
                 </div>
 
                 <div>
 
-                  <h4 class="font-heading text-lg font-bold text-gray-900 mb-1">Departemen Pengabdian Masyarakat</h4>
+                  <h4 class="font-heading font-bold text-slate-800">Departemen Pengabdian Masyarakat</h4>
 
-                  <p class="text-xs text-emerald-600 font-medium mb-3">Badan Eksekutif Mahasiswa (BEM)</p>
-
-                  <p class="text-gray-600 text-sm leading-relaxed">Menginisiasi program edukasi obat ke desa-desa binaan, melatih kemampuan komunikasi publik dan empati sosial.</p>
+                  <p class="text-sm text-cyan-600">BEM Fakultas</p>
 
                 </div>
 
               </div>
+
+              <p class="text-slate-600 leading-relaxed">Menginisiasi program edukasi obat ke desa-desa binaan, melatih kemampuan komunikasi publik dan empati sosial untuk masyarakat luas.</p>
 
             </div>
 
@@ -809,30 +753,32 @@
 
     </section><!-- Contact Section -->
 
-    <section id="contact" class="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 py-24">
+    <section id="contact" class="py-16 sm:py-24 bg-gradient-to-b from-slate-50 to-blue-50">
 
-      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="text-center mb-16">
+        <div class="text-center mb-12 sm:mb-16">
 
-          <h2 class="font-heading text-4xl font-bold text-gray-900 section-heading inline-block">Get In Touch</h2>
+          <p class="text-blue-600 font-medium mb-2 tracking-wider uppercase text-sm">Mari Terhubung</p>
 
-          <p class="text-gray-600 mt-6 max-w-2xl mx-auto">Tertarik untuk berkolaborasi atau memiliki pertanyaan? Mari terhubung!</p>
+          <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800">Hubungi Saya</h2>
+
+          <p class="text-slate-600 mt-4 max-w-2xl mx-auto">Tertarik untuk berkolaborasi atau ingin mengetahui lebih lanjut? Jangan ragu untuk menghubungi saya.</p>
 
         </div>
 
-        <div class="grid lg:grid-cols-2 gap-12">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
           <!-- Contact Info -->
 
-          <div class="space-y-5">
+          <div class="space-y-6">
 
-            <div class="contact-info-card">
+            <div class="card-gradient rounded-2xl p-6 shadow-lg border border-slate-100 skill-card">
 
               <div class="flex items-center gap-4">
 
-                <div class="icon-wrapper flex-shrink-0">
+                <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
 
-                  <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 
                   </svg>
@@ -841,9 +787,7 @@
 
                 <div>
 
-                  <p class="text-sm text-gray-500 font-medium">Email</p>
-
-                  <p id="contact-email-display" class="text-gray-900 font-semibold">Zakiaferdiana13@gmail.com</p>
+                  <p class="text-sm text-slate-500 mb-1">Email</p><a id="contact-email-link" href="mailto:Zakiaferdiana13@gmail.com" class="text-slate-800 font-semibold hover:text-blue-600 transition-colors"> Zakiaferdiana13@gmail.com </a>
 
                 </div>
 
@@ -851,13 +795,13 @@
 
             </div>
 
-            <div class="contact-info-card">
+            <div class="card-gradient rounded-2xl p-6 shadow-lg border border-slate-100 skill-card">
 
               <div class="flex items-center gap-4">
 
-                <div class="icon-wrapper flex-shrink-0">
+                <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
 
-                  <svg class="w-7 h-7 text-white" fill="currentColor" viewbox="0 0 24 24">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewbox="0 0 24 24">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
 
                   </svg>
@@ -866,9 +810,9 @@
 
                 <div>
 
-                  <p class="text-sm text-gray-500 font-medium">WhatsApp</p>
+                  <p class="text-sm text-slate-500 mb-1">WhatsApp</p>
 
-                  <p class="text-gray-900 font-semibold">Hubungi 62 881-0235-77006</p>
+                  <p class="text-slate-800 font-semibold">0881023577006</p>
 
                 </div>
 
@@ -876,13 +820,13 @@
 
             </div>
 
-            <div class="contact-info-card">
+            <div class="card-gradient rounded-2xl p-6 shadow-lg border border-slate-100 skill-card">
 
               <div class="flex items-center gap-4">
 
-                <div class="icon-wrapper flex-shrink-0">
+                <div class="w-14 h-14 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
 
-                  <svg class="w-7 h-7 text-white" fill="currentColor" viewbox="0 0 24 24">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewbox="0 0 24 24">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
 
                   </svg>
@@ -891,9 +835,7 @@
 
                 <div>
 
-                  <p class="text-sm text-gray-500 font-medium">Instagram</p>
-
-                  <p id="contact-instagram-display" class="text-gray-900 font-semibold">@zakiafrrd</p>
+                  <p class="text-sm text-slate-500 mb-1">Instagram</p><a href="https://instagram.com/zakiafrrd" target="_blank" rel="noopener noreferrer" class="text-slate-800 font-semibold hover:text-pink-600 transition-colors"> @zakiafrrd </a>
 
                 </div>
 
@@ -903,34 +845,44 @@
 
           </div><!-- Contact Form -->
 
-          <div class="card-minimal p-8">
+          <div class="card-gradient rounded-2xl p-6 sm:p-8 shadow-lg border border-slate-100">
 
-            <h3 class="font-heading text-2xl font-bold text-gray-900 mb-6">Kirim Pesan</h3>
+            <h3 class="font-heading text-xl font-bold text-slate-800 mb-6">Kirim Pesan</h3>
 
             <form id="contact-form" class="space-y-5">
 
-              <div><label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Nama Lengkap</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-emerald-500 transition-all" placeholder="Masukkan nama Anda">
+              <div><label for="name" class="block text-sm font-medium text-slate-700 mb-2">Nama Lengkap</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-500/20 transition-all" placeholder="Masukkan nama Anda">
 
               </div>
 
-              <div><label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-emerald-500 transition-all" placeholder="email@example.com">
+              <div><label for="email" class="block text-sm font-medium text-slate-700 mb-2">Email</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-500/20 transition-all" placeholder="email@contoh.com">
 
               </div>
 
-              <div><label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Pesan</label> <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-emerald-500 transition-all resize-none" placeholder="Tulis pesan Anda di sini..."></textarea>
+              <div><label for="subject" class="block text-sm font-medium text-slate-700 mb-2">Subjek</label> <input type="text" id="subject" name="subject" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-500/20 transition-all" placeholder="Perihal pesan">
 
-              </div><button type="submit" class="btn-mint w-full py-3 rounded-xl font-semibold flex items-center justify-center gap-2"> <span>Kirim Pesan</span>
+              </div>
+
+              <div><label for="message" class="block text-sm font-medium text-slate-700 mb-2">Pesan</label> <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-500/20 transition-all resize-none" placeholder="Tulis pesan Anda di sini..."></textarea>
+
+              </div><button type="submit" class="w-full btn-gradient text-white px-6 py-4 rounded-xl font-semibold shadow-lg flex items-center justify-center gap-2">
 
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
 
-                </svg></button>
+                </svg> Kirim Pesan </button>
 
             </form>
 
-            <div id="form-success" class="hidden mt-5 p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-800 text-center font-medium text-sm">
+            <div id="form-success" class="hidden mt-4 p-4 bg-green-50 border border-green-200 rounded-xl">
 
-              ✓ Pesan Anda telah terkirim! Terima kasih.
+              <p class="text-green-700 font-medium flex items-center gap-2">
+
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+
+                </svg> Pesan berhasil dikirim! Terima kasih telah menghubungi.
+              </p>
 
             </div>
 
@@ -942,46 +894,69 @@
 
     </section><!-- Footer -->
 
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-slate-900 text-white py-12">
 
-      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
 
-          <div class="text-center md:text-left">
+          <div>
 
-            <h3 class="font-heading font-bold text-xl text-gradient-mint mb-2">Zakia Ferdiana</h3>
+            <h4 class="font-heading text-xl font-bold mb-4">Zakia Ferdiana</h4>
 
-            <p class="text-gray-400 text-sm">Apoteker &amp; Formulator Kosmetik</p>
-
-          </div>
-
-          <div class="flex gap-4"><a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-emerald-600 flex items-center justify-center transition-all" aria-label="Instagram">
-
-              <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-
-              </svg></a> <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-emerald-600 flex items-center justify-center transition-all" aria-label="LinkedIn">
-
-              <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-
-              </svg></a> <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-emerald-600 flex items-center justify-center transition-all" aria-label="Email">
-
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-
-              </svg></a>
+            <p class="text-slate-400 leading-relaxed">Apoteker &amp; Formulator Kosmetik dengan dedikasi untuk kesehatan dan inovasi produk berbasis sains.</p>
 
           </div>
 
-          <div class="text-center md:text-right">
+          <div>
 
-            <p class="text-gray-400 text-sm">© 2025 Zakia Ferdiana</p>
+            <h4 class="font-semibold mb-4">Navigasi</h4>
 
-            <p class="text-gray-500 text-xs mt-1">All Rights Reserved</p>
+            <ul class="space-y-2">
+
+              <li><a href="#home" class="text-slate-400 hover:text-white transition-colors">Home</a></li>
+
+              <li><a href="#about" class="text-slate-400 hover:text-white transition-colors">About</a></li>
+
+              <li><a href="#skills" class="text-slate-400 hover:text-white transition-colors">Skills</a></li>
+
+              <li><a href="#experience" class="text-slate-400 hover:text-white transition-colors">Experience</a></li>
+
+              <li><a href="#contact" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
+
+            </ul>
 
           </div>
+
+          <div>
+
+            <h4 class="font-semibold mb-4">Media Sosial</h4>
+
+            <div class="flex gap-4"><a href="https://instagram.com/zakiafrrd" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-pink-600 transition-colors">
+
+                <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+
+                </svg></a> <a href="mailto:Zakiaferdiana13@gmail.com" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
+
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+
+                </svg></a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="section-divider mb-8"></div>
+
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+
+          <p class="text-slate-400 text-sm">© 2025 Zakia Ferdiana. All rights reserved.</p>
+
+          <p class="text-slate-500 text-sm">Dedikasi untuk Kesehatan, Inovasi untuk Masa Depan</p>
 
         </div>
 
@@ -992,172 +967,168 @@
   </div>
 
   <script>
+    // Default configuration
     const defaultConfig = {
       site_name: 'Zakia Ferdiana',
-      tagline: 'Lulusan Cum Laude Farmasi Unpad yang berfokus pada integrasi layanan kesehatan klinis dan pengembangan produk inovatif.',
+      tagline: 'Dedikasi untuk Kesehatan, Inovasi untuk masa depan',
       hero_title: 'Zakia Ferdiana',
       hero_role: 'Apoteker & Formulator Kosmetik',
-      about_title: 'About Me',
+      about_title: 'Tentang Saya',
       contact_email: 'Zakiaferdiana13@gmail.com',
-      contact_instagram: '@zakiafrrd',
-      primary_color: '#10b981',
-      secondary_color: '#14b8a6',
-      background_color: '#f9fafb',
-      text_color: '#1f2937',
-      accent_color: '#d1fae5',
-      font_family: 'Outfit',
+      primary_color: '#2563eb',
+      secondary_color: '#06b6d4',
+      text_color: '#1e293b',
+      background_color: '#ffffff',
+      accent_color: '#f8fafc',
+      font_family: 'Source Sans 3',
       font_size: 16
     };
     let config = {
       ...defaultConfig
     };
-    async function onConfigChange(cfg) {
-      config = {
-        ...defaultConfig,
-        ...cfg
-      };
-      const siteNameEl = document.getElementById('site-name');
-      if (siteNameEl) siteNameEl.textContent = config.site_name;
-      const taglineEl = document.getElementById('tagline');
-      if (taglineEl) taglineEl.textContent = config.tagline;
-      const heroTitleEl = document.getElementById('hero-title');
-      if (heroTitleEl) heroTitleEl.textContent = config.hero_title;
-      const heroRoleEl = document.getElementById('hero-role');
-      if (heroRoleEl) heroRoleEl.textContent = config.hero_role;
-      const aboutTitleEl = document.getElementById('about-title');
-      if (aboutTitleEl) aboutTitleEl.textContent = config.about_title;
-      const emailDisplayEl = document.getElementById('contact-email-display');
-      if (emailDisplayEl) emailDisplayEl.textContent = config.contact_email;
-      const instagramDisplayEl = document.getElementById('contact-instagram-display');
-      if (instagramDisplayEl) instagramDisplayEl.textContent = config.contact_instagram;
-      const fontFamily = config.font_family || defaultConfig.font_family;
-      document.querySelectorAll('.font-heading').forEach(el => {
-        el.style.fontFamily = `${fontFamily}, -apple-system, sans-serif`;
-      });
-      const baseSize = config.font_size || defaultConfig.font_size;
-      document.documentElement.style.fontSize = `${baseSize}px`;
-    }
-
-    function mapToCapabilities(cfg) {
-      return {
-        recolorables: [{
-            get: () => cfg.background_color || defaultConfig.background_color,
-            set: (value) => {
-              cfg.background_color = value;
-              if (window.elementSdk) window.elementSdk.setConfig({
-                background_color: value
-              });
-            }
-          },
-          {
-            get: () => cfg.accent_color || defaultConfig.accent_color,
-            set: (value) => {
-              cfg.accent_color = value;
-              if (window.elementSdk) window.elementSdk.setConfig({
-                accent_color: value
-              });
-            }
-          },
-          {
-            get: () => cfg.text_color || defaultConfig.text_color,
-            set: (value) => {
-              cfg.text_color = value;
-              if (window.elementSdk) window.elementSdk.setConfig({
-                text_color: value
-              });
-            }
-          },
-          {
-            get: () => cfg.primary_color || defaultConfig.primary_color,
-            set: (value) => {
-              cfg.primary_color = value;
-              if (window.elementSdk) window.elementSdk.setConfig({
-                primary_color: value
-              });
-            }
-          },
-          {
-            get: () => cfg.secondary_color || defaultConfig.secondary_color,
-            set: (value) => {
-              cfg.secondary_color = value;
-              if (window.elementSdk) window.elementSdk.setConfig({
-                secondary_color: value
-              });
-            }
-          }
-        ],
-        borderables: [],
-        fontEditable: {
-          get: () => cfg.font_family || defaultConfig.font_family,
-          set: (value) => {
-            cfg.font_family = value;
-            if (window.elementSdk) window.elementSdk.setConfig({
-              font_family: value
-            });
-          }
-        },
-        fontSizeable: {
-          get: () => cfg.font_size || defaultConfig.font_size,
-          set: (value) => {
-            cfg.font_size = value;
-            if (window.elementSdk) window.elementSdk.setConfig({
-              font_size: value
-            });
-          }
-        }
-      };
-    }
-
-    function mapToEditPanelValues(cfg) {
-      return new Map([
-        ['site_name', cfg.site_name || defaultConfig.site_name],
-        ['tagline', cfg.tagline || defaultConfig.tagline],
-        ['hero_title', cfg.hero_title || defaultConfig.hero_title],
-        ['hero_role', cfg.hero_role || defaultConfig.hero_role],
-        ['about_title', cfg.about_title || defaultConfig.about_title],
-        ['contact_email', cfg.contact_email || defaultConfig.contact_email],
-        ['contact_instagram', cfg.contact_instagram || defaultConfig.contact_instagram]
-      ]);
-    }
+    // Initialize Element SDK
     if (window.elementSdk) {
       window.elementSdk.init({
         defaultConfig,
-        onConfigChange,
-        mapToCapabilities,
-        mapToEditPanelValues
+        onConfigChange: async (newConfig) => {
+          config = {
+            ...defaultConfig,
+            ...newConfig
+          };
+          // Update header
+          const headerName = document.getElementById('header-name');
+          const headerTagline = document.getElementById('header-tagline');
+          if (headerName) headerName.textContent = config.site_name || defaultConfig.site_name;
+          if (headerTagline) headerTagline.textContent = config.tagline || defaultConfig.tagline;
+          // Update hero section
+          const heroName = document.getElementById('hero-name');
+          const heroRole = document.getElementById('hero-role');
+          if (heroName) heroName.textContent = config.hero_title || defaultConfig.hero_title;
+          if (heroRole) heroRole.textContent = config.hero_role || defaultConfig.hero_role;
+          // Update about section
+          const aboutTitle = document.getElementById('about-title');
+          if (aboutTitle) aboutTitle.textContent = config.about_title || defaultConfig.about_title;
+          // Update contact email
+          const contactEmailLink = document.getElementById('contact-email-link');
+          if (contactEmailLink) {
+            const email = config.contact_email || defaultConfig.contact_email;
+            contactEmailLink.textContent = email;
+            contactEmailLink.href = `mailto:${email}`;
+          }
+          // Apply font family
+          const fontFamily = config.font_family || defaultConfig.font_family;
+          document.body.style.fontFamily = `${fontFamily}, 'Source Sans 3', system-ui, sans-serif`;
+          // Apply font size scaling
+          const baseSize = config.font_size || defaultConfig.font_size;
+          document.documentElement.style.fontSize = `${baseSize}px`;
+        },
+        mapToCapabilities: (cfg) => ({
+          recolorables: [{
+              get: () => cfg.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({
+                  background_color: value
+                });
+              }
+            },
+            {
+              get: () => cfg.accent_color || defaultConfig.accent_color,
+              set: (value) => {
+                config.accent_color = value;
+                window.elementSdk.setConfig({
+                  accent_color: value
+                });
+              }
+            },
+            {
+              get: () => cfg.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({
+                  text_color: value
+                });
+              }
+            },
+            {
+              get: () => cfg.primary_color || defaultConfig.primary_color,
+              set: (value) => {
+                config.primary_color = value;
+                window.elementSdk.setConfig({
+                  primary_color: value
+                });
+              }
+            },
+            {
+              get: () => cfg.secondary_color || defaultConfig.secondary_color,
+              set: (value) => {
+                config.secondary_color = value;
+                window.elementSdk.setConfig({
+                  secondary_color: value
+                });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => cfg.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({
+                font_family: value
+              });
+            }
+          },
+          fontSizeable: {
+            get: () => cfg.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({
+                font_size: value
+              });
+            }
+          }
+        }),
+        mapToEditPanelValues: (cfg) => new Map([
+          ['site_name', cfg.site_name || defaultConfig.site_name],
+          ['tagline', cfg.tagline || defaultConfig.tagline],
+          ['hero_title', cfg.hero_title || defaultConfig.hero_title],
+          ['hero_role', cfg.hero_role || defaultConfig.hero_role],
+          ['about_title', cfg.about_title || defaultConfig.about_title],
+          ['contact_email', cfg.contact_email || defaultConfig.contact_email]
+        ])
       });
     }
+    // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const closeMenuBtn = document.getElementById('close-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.add('active');
+        mobileMenu.classList.toggle('hidden');
+      });
+      // Close mobile menu when clicking a link
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
       });
     }
-    if (closeMenuBtn && mobileMenu) {
-      closeMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-      });
-    }
-    mobileNavLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-      });
-    });
+    // Contact form handling
     const contactForm = document.getElementById('contact-form');
     const formSuccess = document.getElementById('form-success');
     if (contactForm) {
       contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
+        // Show success message
         formSuccess.classList.remove('hidden');
         contactForm.reset();
+        // Hide success message after 5 seconds
         setTimeout(() => {
           formSuccess.classList.add('hidden');
         }, 5000);
       });
     }
+    // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -1170,27 +1141,18 @@
         }
       });
     });
-    const navItems = document.querySelectorAll('.nav-item');
-    const sections = document.querySelectorAll('section[id]');
-
-    function updateActiveNav() {
-      let scrollY = window.pageYOffset;
-      sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          navItems.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${sectionId}`) {
-              link.classList.add('active');
-            }
-          });
-        }
-      });
-    }
-    window.addEventListener('scroll', updateActiveNav);
-    onConfigChange(config);
+    // Header scroll effect
+    let lastScroll = 0;
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 100) {
+        header.classList.add('shadow-md');
+      } else {
+        header.classList.remove('shadow-md');
+      }
+      lastScroll = currentScroll;
+    });
   </script>
 
   <script>
@@ -1199,7 +1161,7 @@
         var b = a.contentDocument || a.contentWindow.document;
         if (b) {
           var d = b.createElement('script');
-          d.innerHTML = "window.__CF$cv$params={r:'9c8971f6108dff91',t:'MTc3MDIwMDUyOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+          d.innerHTML = "window.__CF$cv$params={r:'9c8a95f897ff6594',t:'MTc3MDIxMjQ4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
           b.getElementsByTagName('head')[0].appendChild(d)
         }
       }
